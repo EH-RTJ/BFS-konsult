@@ -1,8 +1,8 @@
 
-# Brandskyddsbot â€“ Docker Compose
+# Brandskyddsbot – Docker Compose
 
-KÃ¶r en kÃ¤llaâ€‘lÃ¥st Streamlit-app bakom Nginx pÃ¥ port 80.
-Appen blir tillgÃ¤nglig pÃ¥:  `http://<din-server>/brandskydd`
+Kör en källa‑låst Streamlit-app bakom Nginx på port 80.
+Appen blir tillgänglig på:  `http://<din-server>/brandskydd`
 
 ## Start
 ```bash
@@ -10,17 +10,17 @@ docker compose up -d --build
 ```
 
 ## Struktur
-- `Dockerfile` â€“ bygger appcontainern
-- `app.py` â€“ Streamlit-app (PDF â†’ RAG â†’ svar med kÃ¤llcitat)
+- `Dockerfile` – bygger appcontainern
+- `app.py` – Streamlit-app (PDF → RAG → svar med källcitat)
 - `requirements.txt`
-- `.streamlit/config.toml` â€“ sÃ¤tter `baseUrlPath=brandskydd`
-- `nginx/nginx.conf` â€“ reverse proxy till appen
-- `docker-compose.yml` â€“ tvÃ¥ services (app, nginx)
+- `.streamlit/config.toml` – sätter `baseUrlPath=brandskydd`
+- `nginx/nginx.conf` – reverse proxy till appen
+- `docker-compose.yml` – två services (app, nginx)
 
 ## HTTPS (rekommenderas)
-Placera bakom en omvÃ¤nd proxy med TLS (t.ex. din befintliga Nginx/Traefik) eller kÃ¶r nginxâ€‘proxyn pÃ¥ 443 med certifikat.
+Placera bakom en omvänd proxy med TLS (t.ex. din befintliga Nginx/Traefik) eller kör nginx‑proxyn på 443 med certifikat.
 
-## BÃ¤dda in pÃ¥ din hemsida
+## Bädda in på din hemsida
 ```html
 <iframe src="/brandskydd" style="width:100%;height:80vh;border:0"></iframe>
 ```
